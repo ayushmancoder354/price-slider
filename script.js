@@ -3,16 +3,16 @@ const rangevalue =
 const rangeInputvalue =  
     document.querySelectorAll(".range-input input"); 
   
-// Set the price gap 
+
 let priceGap = 500; 
   
-// Adding event listners to price input elements 
+
 const priceInputvalue =  
     document.querySelectorAll(".price-input input"); 
 for (let i = 0; i < priceInputvalue.length; i++) { 
     priceInputvalue[i].addEventListener("input", e => { 
   
-        // Parse min and max values of the range input 
+       
         let minp = parseInt(priceInputvalue[0].value); 
         let maxp = parseInt(priceInputvalue[1].value); 
         let diff = maxp - minp 
@@ -40,8 +40,7 @@ for (let i = 0; i < priceInputvalue.length; i++) {
             } 
         } 
   
-        // Check if the price gap is met  
-        // and max price is within the range 
+        
         if (diff >= priceGap && maxp <= rangeInputvalue[1].max) { 
             if (e.target.className === "min-input") { 
                 rangeInputvalue[0].value = minp; 
@@ -57,7 +56,7 @@ for (let i = 0; i < priceInputvalue.length; i++) {
         } 
     }); 
   
-    // Add event listeners to range input elements 
+    
     for (let i = 0; i < rangeInputvalue.length; i++) { 
         rangeInputvalue[i].addEventListener("input", e => { 
             let minVal =  
@@ -67,7 +66,7 @@ for (let i = 0; i < priceInputvalue.length; i++) {
   
             let diff = maxVal - minVal 
               
-            // Check if the price gap is exceeded 
+            
             if (diff < priceGap) { 
               
                 // Check if the input is the min range input 
@@ -80,7 +79,7 @@ for (let i = 0; i < priceInputvalue.length; i++) {
             } 
             else { 
               
-                // Update price inputs and range progress 
+                
                 priceInputvalue[0].value = minVal; 
                 priceInputvalue[1].value = maxVal; 
                 rangevalue.style.left = 
